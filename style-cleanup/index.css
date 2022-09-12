@@ -1,0 +1,58 @@
+* {
+  padding: 0;
+  margin: 0; }
+
+html {
+  background: #eee; }
+
+#wrapper {
+  max-width: 402px;
+  padding: 60px;
+  margin: 0 auto; }
+
+.Card {
+  background: white;
+  border: 1px solid #A0ABD5; }
+  .Card .Card-header {
+    background: #e7ecee; }
+  .Card .Card-info {
+    background: white; }
+    .Card .Card-info .Card-name {
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      color: #0196d6;
+      font-size: 24px;
+      font-weight: 600;
+      padding: 7px; }
+    .Card .Card-info .Card-actions {
+      background: #ccd6db;
+      padding: 10px;
+      overflow: hidden; }
+      .Card .Card-info .Card-actions .Card-stats {
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        text-transform: upcase;
+        float: left; }
+      .Card .Card-info .Card-actions .Card-follow {
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        float: right;
+        padding: 8px 10px 6px 9px;
+        background: #0097d5;
+        border: 1px solid #2570b7;
+        margin-left: 5px;
+        text-decoration: none;
+        color: white; }
+        .Card .Card-info .Card-actions .Card-follow:hover {
+          background: #19bcee;
+          border: 1px solid #2570b7; }
+      .Card .Card-info .Card-actions .Card-message {
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        text-decoration: none;
+        padding: 8px 8px 8px 8px;
+        border: 1px solid #347932;
+        background: #50933f;
+        float: right;
+        margin: 0 0 0 5;
+        color: #fff; }
+        .Card .Card-info .Card-actions .Card-message:hover {
+          background: #6dae4d;
+          border: 1px solid #347932; }

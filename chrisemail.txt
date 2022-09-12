@@ -1,0 +1,14 @@
+Hi Nate,
+
+Sorry for the delay! We had our on-site in SF last week, which distracted me more than anticipated. Anyway, I'm back now and looking forward to moving forward with you.
+
+I've attached the zip of the exercises, but please don't worry; I don't expect you to complete all of them. 
+
+You can start with the url-shortener exercise, and then if you have time, take a look at the object-oriented exercise. 
+
+The temp-component exercise is fun if you still have time after that and want to show off your Javascript skills.
+
+Let me know if you have any questions!
+
+Best,
+Chris

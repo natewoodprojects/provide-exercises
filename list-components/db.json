@@ -1,0 +1,13 @@
+{
+  "lists": [
+    {
+      "heading": "List of Items",
+      "body": "Some descriptive text",
+      "items": [
+        { "title": "Item one" },
+        { "title": "Item two", "status": "complete" },
+        { "title": "Item three", "style": "danger" }
+      ]
+    }
+  ]
+}
