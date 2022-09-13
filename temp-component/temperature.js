@@ -31,9 +31,9 @@ class Temperature {
 
 chicago = new Temperature(63, "fahrenheit");
 
-console.log(chicago.degrees);
-console.log(chicago.scale);
+console.log(chicago.degrees); // => 63
+console.log(chicago.scale); // => fahrenheit
 chicago.toCelcius();
-console.log(chicago.degrees);
-console.log(chicago.scale);
-console.log(chicago.isBoiling());
+console.log(chicago.degrees); // => 17
+console.log(chicago.scale); // => celcius
+console.log(chicago.isBoiling()); // => false
