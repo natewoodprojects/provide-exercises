@@ -1,3 +1,5 @@
+require 'digest/sha2'
+
 class UrlController < ApplicationController
 
   def show
@@ -33,33 +35,21 @@ class UrlController < ApplicationController
     Link.shorten(url, slug + SecureRandom.uuid[0..2])
   end
 
-end
+  attr_reader :url, :link_model
 
-require 'digest/sha2'
+  def initialize(url, link_model = Link)
+      @url = url
+      @link_model = link_model
+  end
 
-class Shortener
+  def generate_short_link
+      link_model.create(original_url: url, lookup_code: lookup_code)
+  end
 
-    attr_reader :url, :link_model
-
-    def initialize(url, link_model = Link)
-        @url = url
-        @link_model = link_model
-    end
-
-    def generate_short_link
-        link_model.create(original_url: url, lookup_code: lookup_code)
-    end
-
-    def lookup_code
-        loop do
-            code = get_fresh_code
-            break code unless link_model.exists?(lookup_code: code)
-        end 
-    end
-
-    private 
-
-    def get_fresh_code
-        SecureRandom.uuid[0..6]
-    end
+  def lookup_code
+      loop do
+          code = SecureRandom.uuid[0..6]
+          break code unless link_model.exists?(lookup_code: code)
+      end 
+  end
 end
