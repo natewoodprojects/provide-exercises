@@ -10,7 +10,7 @@ class UrlController < ApplicationController
   end
 
   def show
-    @link = Link.find_by_slug(params[:slug]) 
+    @link = Link.where(params[:lookup_code]) 
     render 'errors/404', status: 404 if @link.nil?
     @link.update_attribute(:clicked, @link.clicked + 1)
     redirect_to @link.url
@@ -19,7 +19,7 @@ class UrlController < ApplicationController
   def create
     loop do
     code = SecureRandom.uuid[0..6]
-    break code unless link_model.exists?(lookup_code: code) 
+    break code unless Link.exists?(lookup_code: code) 
     link_model.create(url: @url, lookup_code: code)
   end
 end
