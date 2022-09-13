@@ -1,36 +1,39 @@
-function adjustTemp(degrees, scale) {
-  var fahrenheit = -40;
-  var celcius = -40;
-  if (scale === "fahrenheit") {
-    fahrenheit += degrees;
-    celDeg = ((degrees - 32) * 5) / 9;
-    celcius += celDeg;
-  } else if (scale === "celcius") {
-    celcius += degrees;
-    celFah = (degrees * 9) / 5 + 32;
-    fahrenheit += celFah;
+// Created a class to keep track of a certain place's temperature, and can switch back and forth between temperature typed and increase/decrease temperature.
+
+class Temperature {
+  constructor(degrees, scale) {
+    this.degrees = degrees;
+    this.scale = scale;
   }
-  return [celcius, fahrenheit];
+  adjustTemp(degrees) {
+    this.scale += degrees;
+  }
+  toCelcius() {
+    if (this.scale === "fahrenheit") {
+      this.degrees = Math.round(((this.degrees - 32) * 5) / 9);
+      this.scale = "celcius";
+    }
+  }
+  toFahrenheit() {
+    if (this.scale === "celcius") {
+      this.degrees = Math.round((this.degrees * 9) / 5 + 32);
+      this.scale = "celcius";
+    }
+  }
+  isBoiling() {
+    if (this.scale === "celcius") {
+      return this.degrees >= 100;
+    } else if (this.scale === "fahrenheit") {
+      return this.degrees >= 212;
+    }
+  }
 }
 
-function toCelsius(fahrenheit) {
-  return ((fahrenheit - 32) * 5) / 9;
-}
+chicago = new Temperature(63, "fahrenheit");
 
-function toFahrenheit(celsius) {
-  return (celsius * 9) / 5 + 32;
-}
-
-function celcBoiling(celsius) {
-  return celsius >= 100;
-}
-
-function fahrenBoiling(fahrenheit) {
-  return fahrenheit >= 212;
-}
-
-console.log(fahrenheit, celcius);
-
-console.log(adjustTemp(50, "fahrenheit"));
-
-console.log(fahrenheit, celcius, "should be 10 and -12.2222");
+console.log(chicago.degrees);
+console.log(chicago.scale);
+chicago.toCelcius();
+console.log(chicago.degrees);
+console.log(chicago.scale);
+console.log(chicago.isBoiling());
